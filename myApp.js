@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 });
 
 const absolutePath = __dirname + "/public";
-app.use(express.static(absolutePath));
+app.use("/public",express.static(absolutePath));
 
 
 
