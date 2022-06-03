@@ -14,7 +14,11 @@ const absolutePath = __dirname + "/public";
 app.use("/public",express.static(absolutePath));
 
 
-
+app.get('/json', (req, res) => {
+  res.json({
+    message: "Hello json"
+  })
+});
 
 
 
