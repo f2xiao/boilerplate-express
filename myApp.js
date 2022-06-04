@@ -49,8 +49,12 @@ app.get('/:word/echo', (req, res) => {
   })
 })
 
-
-
+// an API endpint
+app.route('/name').get((req, res) => {
+  res.json({
+    name: `${req.query.first} ${req.query.last}`
+  })
+})
 
 
 
