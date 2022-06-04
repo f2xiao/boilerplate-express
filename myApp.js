@@ -5,7 +5,7 @@ let app = express();
 //   res.send("Hello Express");
 // });
 
-// logger
+// logger server
 app.use((req, res, next) =>{
 	const log = `${req.method} ${req.path} - ${req.ip}`;
 	console.log(log);
@@ -40,6 +40,13 @@ app.get('/now', (req, res, next)=>{
 	res.json({
 	time: req.time
 })
+})
+
+// echo server
+app.get('/:word/echo', (req, res) => {
+  res.json({
+    echo: req.params.word
+  })
 })
 
 
